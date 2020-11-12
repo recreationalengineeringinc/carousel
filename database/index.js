@@ -1,9 +1,7 @@
+const itemsData   = require('../data.js');
 const mongoose    = require('mongoose');
+mongoose.connect('mongodb://localhost/rei');
 const db          = mongoose.connection;
-const itemsData = require('../data.js');
-
-mongoose.connect('mongodb://localhost/fetcher');
-
 
 db.on('error', console.error.bind(console, 'connection error:'));
 
@@ -17,7 +15,7 @@ let itemSchema = mongoose.Schema(
     },
     brand: String,
     itemName: String,
-    rating: Image,
+    rating: String,
     numberOfRatings: Number,
     price: Number
   }
@@ -26,11 +24,9 @@ let itemSchema = mongoose.Schema(
 
 let Item = mongoose.model('Item', itemSchema);
 
-let save = (item) => {
-  var int = Math.floor(Math.random() * Math.floor(1000)).toString();
-  var decimal = Math.random().toString().slice(0, 4);
+let save = function (item) {
 
-  let item = new Item({
+  let newItem = new Item({
     image: {
       url: item.image.url,
       description: item.image.description
@@ -39,19 +35,20 @@ let save = (item) => {
     itemName: item.itemName,
     rating: item.rating,
     numberOfRatings: item.numberOfRatings,
-    price: item.price;
-  })
-  item.save();
+    price: item.price
+  });
+
+  newItem.save();
 };
 
-let dataIterator = (items) => {
-  items.forEach((item) => { save(item) })
+let dataIterator = (data) => {
+  data.forEach((item) => { save(item) })
 };
 
-db.once('open', function (itemsData) {
+db.once('open', function () {
   // we're connected!
   // Once our connection opens, our callback will be called
   dataIterator(itemsData);
 });
 
-module.exports.save = save;
+// module.exports.save = save;
