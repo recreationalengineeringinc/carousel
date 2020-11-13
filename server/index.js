@@ -6,14 +6,13 @@ const bodyParser = require('body-parser');
 
 const port = 3000;
 
-// const seeder = require('../database/seeder.js');
-const seeder = require('./model.js');
+const model = require('./model.js');
 
 app.use(express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
 
 app.get('/items', (req, res) => {
-  seeder.dataFetcher((err, data) => {
+  model.dataFetcher((err, data) => {
     if (err) {
       res.send(err);
     } else {

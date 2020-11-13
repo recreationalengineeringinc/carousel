@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const itemsData = require('../data.js');
+
+const data = require('../data_seed.js');
 
 mongoose.connect('mongodb://localhost/rei');
 const db = mongoose.connection;
@@ -10,12 +11,11 @@ db.on('error', console.error.bind(console, 'connection error:'));
 const itemSchema = mongoose.Schema(
   {
     // _id: ObjectId,
-    image: {
-      url: String,
-      description: String,
-    },
+    id: Number,
+    imageUrl: String,
+    imageDescription: String,
     brand: String,
-    itemName: String,
+    name: String,
     rating: String,
     numberOfRatings: Number,
     price: Number,
@@ -27,12 +27,11 @@ const Item = mongoose.model('Item', itemSchema);
 // eslint-disable-next-line func-names
 const save = function (item) {
   const newItem = new Item({
-    image: {
-      url: item.image.url,
-      description: item.image.description,
-    },
+    id: item.id,
+    imageUrl: item.imageUrl,
+    imageDescription: item.imageDescription,
     brand: item.brand,
-    itemName: item.itemName,
+    name: item.name,
     rating: item.rating,
     numberOfRatings: item.numberOfRatings,
     price: item.price,
@@ -42,14 +41,16 @@ const save = function (item) {
 };
 
 // eslint-disable-next-line no-unused-vars
-const dataIterator = (data) => {
-  data.forEach((item) => { save(item); });
+const dataIterator = (allItems) => {
+  allItems.forEach((item) => { save(item); });
 };
 
 db.once('open', () => {
   // we're connected!
   // Once our connection opens, our callback will be called
-  dataIterator(itemsData);
+  data.itemCreator(6, (err, results) => {
+    dataIterator(results);
+  });
 });
 
 module.exports.Item = Item;
