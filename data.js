@@ -3,7 +3,7 @@ module.exports = [
     id: 1,
     image: {
       url: 'https://reiphotos.s3-us-west-2.amazonaws.com/womens-jacket.jpg',
-      description: 'womens-jacket',
+      description: 'jacket',
     },
     brand: 'brandString',
     itemName: 'itemNameString',
@@ -15,7 +15,7 @@ module.exports = [
     id: 2,
     image: {
       url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg',
-      description: 'camping-tent',
+      description: 'tent',
     },
     brand: 'brandString',
     itemName: 'itemNameString',
@@ -39,7 +39,7 @@ module.exports = [
     id: 4,
     image: {
       url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
-      description: 'climbing-shoes',
+      description: 'shoes',
     },
     brand: 'brandString',
     itemName: 'itemNameString',
@@ -51,7 +51,7 @@ module.exports = [
     id: 5,
     image: {
       url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg',
-      description: 'climbing-shoes',
+      description: 'shoes',
     },
     brand: 'brandString',
     itemName: 'itemNameString',
@@ -63,7 +63,7 @@ module.exports = [
     id: 6,
     image: {
       url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/nalgene-bottle.jpg',
-      description: 'nalgene-bottle',
+      description: 'bottle',
     },
     brand: 'brandString',
     itemName: 'itemNameString',
@@ -99,7 +99,7 @@ module.exports = [
     id: 9,
     image: {
       url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
-      description: 'climbing-shoes',
+      description: 'shoes',
     },
     brand: 'brandString',
     itemName: 'itemNameString',
@@ -111,7 +111,7 @@ module.exports = [
     id: 10,
     image: {
       url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg',
-      description: 'vegan-climbing-shoes',
+      description: 'shoes',
     },
     brand: 'brandString',
     itemName: 'itemNameString',

@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const port = 3000;
-// import seeder
+
 const seeder = require('../database/seeder.js');
 
 app.use(express.static(`${__dirname}/../public`));

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const itemsData = require('../data.js');
+// const itemsData = require('../data.js');
 
 mongoose.connect('mongodb://localhost/rei');
 const db = mongoose.connection;
@@ -41,6 +41,7 @@ const save = function (item) {
   newItem.save();
 };
 
+// eslint-disable-next-line no-unused-vars
 const dataIterator = (data) => {
   data.forEach((item) => { save(item); });
 };
@@ -48,7 +49,7 @@ const dataIterator = (data) => {
 db.once('open', () => {
   // we're connected!
   // Once our connection opens, our callback will be called
-  dataIterator(itemsData);
+  // dataIterator(itemsData);
 });
 
 const dataFetcher = (callback) => {
@@ -56,9 +57,11 @@ const dataFetcher = (callback) => {
     if (err) {
       callback(err, null);
     } else {
+      // eslint-disable-next-line no-console
+      console.log('the docs: ', docs);
       callback(null, docs);
     }
-  });
+  }).limit(3);
 };
 
 // seeder.Item.findfind().toArray(function (err, result) {
@@ -68,3 +71,21 @@ const dataFetcher = (callback) => {
 // })
 
 module.exports.dataFetcher = dataFetcher;
+
+// Get one random document matching {a: 10} from the mycoll collection.
+// db.mycoll.aggregate([
+//   { $match: { a: 10 } },
+//   { $sample: { size: 1 } }
+// ])
+
+// get a specific atribute and a specific amount
+// const dataFetcher = (callback) => {
+//   Item.find({ 'image.description': 'jacket' }, (err, docs) => {
+//     if (err) {
+//       callback(err, null);
+//     } else {
+//       console.log('the docs: ', docs);
+//       callback(null, docs);
+//     }
+//   }).limit(1);
+// };
