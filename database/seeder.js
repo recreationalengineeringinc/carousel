@@ -1,64 +1,61 @@
-const itemsData   = require('../data.js');
-const mongoose    = require('mongoose');
-mongoose.connect('mongodb://localhost/rei');
-const db          = mongoose.connection;
+const mongoose = require('mongoose');
+const itemsData = require('../data.js');
 
+mongoose.connect('mongodb://localhost/rei');
+const db = mongoose.connection;
+
+// eslint-disable-next-line no-console
 db.on('error', console.error.bind(console, 'connection error:'));
 
-let itemSchema = mongoose.Schema(
-  //When you create a new document with the automatically added _id property, Mongoose creates a new _id of type ObjectId to your document.
+const itemSchema = mongoose.Schema(
   {
     // _id: ObjectId,
     image: {
-        url: String,
-        description: String
+      url: String,
+      description: String,
     },
     brand: String,
     itemName: String,
     rating: String,
     numberOfRatings: Number,
-    price: Number
-  }
-
+    price: Number,
+  },
 );
 
-let Item = mongoose.model('Item', itemSchema);
+const Item = mongoose.model('Item', itemSchema);
 
-let save = function (item) {
-
-  let newItem = new Item({
+// eslint-disable-next-line func-names
+const save = function (item) {
+  const newItem = new Item({
     image: {
       url: item.image.url,
-      description: item.image.description
+      description: item.image.description,
     },
     brand: item.brand,
     itemName: item.itemName,
     rating: item.rating,
     numberOfRatings: item.numberOfRatings,
-    price: item.price
+    price: item.price,
   });
 
   newItem.save();
 };
 
-let dataIterator = (data) => {
-  data.forEach((item) => { save(item) })
+const dataIterator = (data) => {
+  data.forEach((item) => { save(item); });
 };
 
-db.once('open', function () {
+db.once('open', () => {
   // we're connected!
   // Once our connection opens, our callback will be called
-  // dataIterator(itemsData);
+  dataIterator(itemsData);
 });
 
-let dataFetcher = (callback) => {
-  console.log('Inside dataFetcher');
-  Item.find({}, function (err, docs) {
+const dataFetcher = (callback) => {
+  Item.find({}, (err, docs) => {
     if (err) {
-      console.log('Anything: ', err)
       callback(err, null);
     } else {
-      console.log('Docs: ', docs[0]);
       callback(null, docs);
     }
   });

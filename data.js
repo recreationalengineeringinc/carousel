@@ -1,122 +1,122 @@
 module.exports = [
   {
-    "id": 1,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/womens-jacket.jpg",
-      "description": "String"
+    id: 1,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/womens-jacket.jpg',
+      description: 'womens-jacket',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 1000
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 1000,
   },
   {
-    "id": 2,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg",
-      "description": "String"
+    id: 2,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg',
+      description: 'camping-tent',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 900
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 900,
   },
   {
-    "id": 3,
-    "image": {
-      "url":   "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg",
-      "description": "String"
+    id: 3,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg',
+      description: 'backpack',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 800
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 800,
   },
   {
-    "id": 4,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg",
-      "description": "String"
+    id: 4,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
+      description: 'climbing-shoes',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 600
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 600,
   },
   {
-    "id": 5,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg",
-      "description": "String"
+    id: 5,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg',
+      description: 'climbing-shoes',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 300
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 300,
   },
   {
-    "id": 6,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/nalgene-bottle.jpg",
-      "description": "String"
+    id: 6,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/nalgene-bottle.jpg',
+      description: 'nalgene-bottle',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 150
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 150,
   },
   {
-    "id": 7,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-mens-jacket.jpg",
-      "description": "String"
+    id: 7,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-mens-jacket.jpg',
+      description: 'jacket',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 250
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 250,
   },
   {
-    "id": 8,
-    "image": {
-      "url":   "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg",
-      "description": "String"
+    id: 8,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg',
+      description: 'backpack',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 350
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 350,
   },
   {
-    "id": 9,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg",
-      "description": "String"
+    id: 9,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
+      description: 'climbing-shoes',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 450
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 450,
   },
   {
-    "id": 10,
-    "image": {
-      "url": "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg",
-      "description": "String"
+    id: 10,
+    image: {
+      url: 'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg',
+      description: 'vegan-climbing-shoes',
     },
-    "brand": "brandString",
-    "itemName": "itemNameString",
-    "rating": "Image",
-    "numberOfRatings": 13,
-    "price": 500
+    brand: 'brandString',
+    itemName: 'itemNameString',
+    rating: 'Image',
+    numberOfRatings: 13,
+    price: 500,
   },
-]
+];

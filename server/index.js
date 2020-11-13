@@ -1,15 +1,17 @@
 const express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var port = 3000;
-// import seeder
-var seeder = require('../database/seeder.js');
 
-app.use(express.static(__dirname + '/../public'));
+const app = express();
+
+const bodyParser = require('body-parser');
+
+const port = 3000;
+// import seeder
+const seeder = require('../database/seeder.js');
+
+app.use(express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
 
 app.get('/items', (req, res) => {
-  console.log('Inside app.get');
   seeder.dataFetcher((err, data) => {
     if (err) {
       res.send(err);
@@ -17,11 +19,10 @@ app.get('/items', (req, res) => {
       // console.log('Data: ', data);
       res.send(data);
     }
-  })
-
+  });
 });
 
-
-app.listen(port, function () {
+app.listen(port, () => {
+  // eslint-disable-next-line no-console
   console.log(`listening on port http://localhost:${port}`);
 });
