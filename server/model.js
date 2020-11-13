@@ -1,4 +1,4 @@
-// importing Item from seeder
+// importing Item model from seeder
 const seeder = require('../database/seeder.js');
 
 const dataFetcher = (callback) => {
@@ -15,3 +15,15 @@ const dataFetcher = (callback) => {
 
 // export dataFetcher to the server app.get request
 module.exports.dataFetcher = dataFetcher;
+
+// get a specific atribute and a specific amount
+// const dataFetcher = (callback) => {
+//   Item.find({ 'image.description': 'jacket' }, (err, docs) => {
+//     if (err) {
+//       callback(err, null);
+//     } else {
+//       console.log('the docs: ', docs);
+//       callback(null, docs);
+//     }
+//   }).limit(1);
+// };

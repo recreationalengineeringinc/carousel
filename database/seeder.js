@@ -60,20 +60,7 @@ module.exports.Item = Item;
 //   { $sample: { size: 1 } }
 // ])
 
-// get a specific atribute and a specific amount
-// const dataFetcher = (callback) => {
-//   Item.find({ 'image.description': 'jacket' }, (err, docs) => {
-//     if (err) {
-//       callback(err, null);
-//     } else {
-//       console.log('the docs: ', docs);
-//       callback(null, docs);
-//     }
-//   }).limit(1);
-// };
-
-// seeder.Item.findfind().toArray(function (err, result) {
+// seeder.Item.find().toArray(function (err, result) {
 //   if (err) throw err
-
 //   console.log(result)
 // })
