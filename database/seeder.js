@@ -48,7 +48,26 @@ let dataIterator = (data) => {
 db.once('open', function () {
   // we're connected!
   // Once our connection opens, our callback will be called
-  dataIterator(itemsData);
+  // dataIterator(itemsData);
 });
 
-// module.exports.save = save;
+let dataFetcher = (callback) => {
+  console.log('Inside dataFetcher');
+  Item.find({}, function (err, docs) {
+    if (err) {
+      console.log('Anything: ', err)
+      callback(err, null);
+    } else {
+      console.log('Docs: ', docs[0]);
+      callback(null, docs);
+    }
+  });
+};
+
+// seeder.Item.findfind().toArray(function (err, result) {
+//   if (err) throw err
+
+//   console.log(result)
+// })
+
+module.exports.dataFetcher = dataFetcher;
