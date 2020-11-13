@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const itemsData = require('../data.js');
+const itemsData = require('../data.js');
 
 mongoose.connect('mongodb://localhost/rei');
 const db = mongoose.connection;
@@ -49,28 +49,10 @@ const dataIterator = (data) => {
 db.once('open', () => {
   // we're connected!
   // Once our connection opens, our callback will be called
-  // dataIterator(itemsData);
+  dataIterator(itemsData);
 });
 
-const dataFetcher = (callback) => {
-  Item.find({}, (err, docs) => {
-    if (err) {
-      callback(err, null);
-    } else {
-      // eslint-disable-next-line no-console
-      console.log('the docs: ', docs);
-      callback(null, docs);
-    }
-  }).limit(3);
-};
-
-// seeder.Item.findfind().toArray(function (err, result) {
-//   if (err) throw err
-
-//   console.log(result)
-// })
-
-module.exports.dataFetcher = dataFetcher;
+module.exports.Item = Item;
 
 // Get one random document matching {a: 10} from the mycoll collection.
 // db.mycoll.aggregate([
@@ -89,3 +71,9 @@ module.exports.dataFetcher = dataFetcher;
 //     }
 //   }).limit(1);
 // };
+
+// seeder.Item.findfind().toArray(function (err, result) {
+//   if (err) throw err
+
+//   console.log(result)
+// })

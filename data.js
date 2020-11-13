@@ -11,6 +11,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 1000,
   },
+
   {
     id: 2,
     image: {
@@ -23,6 +24,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 900,
   },
+
   {
     id: 3,
     image: {
@@ -35,6 +37,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 800,
   },
+
   {
     id: 4,
     image: {
@@ -47,6 +50,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 600,
   },
+
   {
     id: 5,
     image: {
@@ -59,6 +63,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 300,
   },
+
   {
     id: 6,
     image: {
@@ -71,6 +76,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 150,
   },
+
   {
     id: 7,
     image: {
@@ -83,6 +89,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 250,
   },
+
   {
     id: 8,
     image: {
@@ -95,6 +102,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 350,
   },
+
   {
     id: 9,
     image: {
@@ -107,6 +115,7 @@ module.exports = [
     numberOfRatings: 13,
     price: 450,
   },
+
   {
     id: 10,
     image: {

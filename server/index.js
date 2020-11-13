@@ -6,7 +6,8 @@ const bodyParser = require('body-parser');
 
 const port = 3000;
 
-const seeder = require('../database/seeder.js');
+// const seeder = require('../database/seeder.js');
+const seeder = require('./model.js');
 
 app.use(express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
