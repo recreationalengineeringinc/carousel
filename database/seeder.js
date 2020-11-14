@@ -12,44 +12,42 @@ const itemSchema = mongoose.Schema(
   {
     // _id: ObjectId,
     id: Number,
-    imageUrl: String,
-    imageDescription: String,
-    brand: String,
-    name: String,
-    rating: String,
-    numberOfRatings: Number,
-    price: Number,
+    items: Array,
   },
-);
+  );
+
+  // id: Number,
+  // imageUrl: String,
+  // imageDescription: String,
+  // brand: String,
+  // name: String,
+  // rating: String,
+  // numberOfRatings: Number,
+  // price: Number,
 
 const Item = mongoose.model('Item', itemSchema);
 
 // eslint-disable-next-line func-names
-const save = function (item) {
+const save = function (itemList) {
+  var id = 1;
   const newItem = new Item({
-    id: item.id,
-    imageUrl: item.imageUrl,
-    imageDescription: item.imageDescription,
-    brand: item.brand,
-    name: item.name,
-    rating: item.rating,
-    numberOfRatings: item.numberOfRatings,
-    price: item.price,
+    id: id,
+    items: itemList
   });
 
   newItem.save();
 };
 
 // eslint-disable-next-line no-unused-vars
-const dataIterator = (allItems) => {
-  allItems.forEach((item) => { save(item); });
-};
+// const dataIterator = (allItems) => {
+//   allItems.forEach((item) => { save(item); });
+// };
 
 db.once('open', () => {
   // we're connected!
   // Once our connection opens, our callback will be called
-  data.itemCreator(6, (err, results) => {
-    dataIterator(results);
+  data.itemCreator(13, (err, results) => {
+    save(results);
   });
 });
 
@@ -65,3 +63,35 @@ module.exports.Item = Item;
 //   if (err) throw err
 //   console.log(result)
 // })
+
+
+// // eslint-disable-next-line func-names
+// const save = function (item) {
+//   const newItem = new Item({
+//     id: item.id,
+//     imageUrl: item.imageUrl,
+//     imageDescription: item.imageDescription,
+//     brand: item.brand,
+//     name: item.name,
+//     rating: item.rating,
+//     numberOfRatings: item.numberOfRatings,
+//     price: item.price,
+//   });
+
+//   newItem.save();
+// };
+
+// // eslint-disable-next-line no-unused-vars
+// const dataIterator = (allItems) => {
+//   allItems.forEach((item) => { save(item); });
+// };
+
+// db.once('open', () => {
+//   // we're connected!
+//   // Once our connection opens, our callback will be called
+//   data.itemCreator(13, (err, results) => {
+//     dataIterator(results);
+//   });
+// });
+
+// module.exports.Item = Item;
