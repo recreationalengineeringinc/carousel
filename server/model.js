@@ -11,7 +11,7 @@ const dataFetcher = (callback) => {
       // console.log('the docs: ', docs);
       callback(null, docs);
     }
-  }).limit();
+  });
 };
 
 // export dataFetcher to the server app.get request

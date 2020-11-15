@@ -12,6 +12,7 @@ const itemSchema = mongoose.Schema(
   {
     // _id: ObjectId,
     id: Number,
+    category: String,
     items: Array,
   },
   );
@@ -29,9 +30,10 @@ const Item = mongoose.model('Item', itemSchema);
 
 // eslint-disable-next-line func-names
 const save = function (itemList) {
-  var id = 1;
+  var id = 3;
   const newItem = new Item({
     id: id,
+    category: 'backpacks',
     items: itemList
   });
 
@@ -46,7 +48,7 @@ const save = function (itemList) {
 db.once('open', () => {
   // we're connected!
   // Once our connection opens, our callback will be called
-  data.itemCreator(13, (err, results) => {
+  data.itemCreator(2, (err, results) => {
     save(results);
   });
 });

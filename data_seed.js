@@ -10,6 +10,9 @@ const faker = require('faker');
 // ];
 
 const photo = faker.image.nightlife();
+const productName = faker.commerce.productName();
+const adjective = faker.commerce.productAdjective();
+const price = faker.commerce.price();
 
 // random price generator
 // eslint-disable-next-line max-len
@@ -25,12 +28,12 @@ const createItem = (index) => (
   {
     id: index,
     imageUrl: photo,
-    imageDescription: 'backpack',
+    imageDescription: adjective,
     brand: 'REI Co-op',
-    name: 'Flash 55 Pack - Men\'s',
+    name: productName,
     rating: randomNum(5),
     numberOfRatings: randomInt(1000),
-    price: randomNum(1000),
+    price: price,
   }
 );
 
