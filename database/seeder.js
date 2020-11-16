@@ -15,7 +15,7 @@ const itemSchema = mongoose.Schema(
     category: String,
     items: Array,
   },
-  );
+);
 
   // id: Number,
   // imageUrl: String,
@@ -29,8 +29,8 @@ const itemSchema = mongoose.Schema(
 const Item = mongoose.model('Item', itemSchema);
 
 // eslint-disable-next-line func-names
-const save = function (itemList) {
-  var id = 3;
+const saver = function (itemList) {
+  var id = 1;
   const newItem = new Item({
     id: id,
     category: 'backpacks',
@@ -45,13 +45,14 @@ const save = function (itemList) {
 //   allItems.forEach((item) => { save(item); });
 // };
 
-db.once('open', () => {
-  // we're connected!
-  // Once our connection opens, our callback will be called
-  data.itemCreator(2, (err, results) => {
-    save(results);
-  });
-});
+// // UNCOMMENT TO RUN seeder.js
+// db.once('open', () => {
+//   // we're connected!
+//   // Once our connection opens, our callback will be called
+//   data.itemCreator(13, (err, results) => {
+//     saver(results);
+//   });
+// });
 
 module.exports.Item = Item;
 
