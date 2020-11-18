@@ -1,0 +1,25 @@
+
+/* .cards-slider {
+  position: relative;
+  /* max-width: 100px; */
+  margin: 0 auto;
+  /* justify-content: center; */
+  overflow: hidden;
+}
+.cards-slider-wrapper {
+  display: flex;
+  position: absolute;
+  overflow-x: scroll;
+  width: 1130px;
+  /* from rei */
+
+}
+
+.cards {
+  flex: 1;
+  min-width: 190px;
+} */
+
+div {
+  display: block;
+}
