@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const itemsData = require('../data.js');
+
+const data = require('../data_seed.js');
 
 mongoose.connect('mongodb://localhost/rei');
 const db = mongoose.connection;
@@ -10,47 +11,48 @@ db.on('error', console.error.bind(console, 'connection error:'));
 const itemSchema = mongoose.Schema(
   {
     // _id: ObjectId,
-    image: {
-      url: String,
-      description: String,
-    },
-    brand: String,
-    itemName: String,
-    rating: String,
-    numberOfRatings: Number,
-    price: Number,
+    id: Number,
+    category: String,
+    items: Array,
   },
 );
+
+  // id: Number,
+  // imageUrl: String,
+  // imageDescription: String,
+  // brand: String,
+  // name: String,
+  // rating: String,
+  // numberOfRatings: Number,
+  // price: Number,
 
 const Item = mongoose.model('Item', itemSchema);
 
 // eslint-disable-next-line func-names
-const save = function (item) {
+const saver = function (itemList) {
+  var id = 1;
   const newItem = new Item({
-    image: {
-      url: item.image.url,
-      description: item.image.description,
-    },
-    brand: item.brand,
-    itemName: item.itemName,
-    rating: item.rating,
-    numberOfRatings: item.numberOfRatings,
-    price: item.price,
+    id: id,
+    category: 'backpacks',
+    items: itemList
   });
 
   newItem.save();
 };
 
 // eslint-disable-next-line no-unused-vars
-const dataIterator = (data) => {
-  data.forEach((item) => { save(item); });
-};
+// const dataIterator = (allItems) => {
+//   allItems.forEach((item) => { save(item); });
+// };
 
-db.once('open', () => {
-  // we're connected!
-  // Once our connection opens, our callback will be called
-  dataIterator(itemsData);
-});
+// // UNCOMMENT TO RUN seeder.js
+// db.once('open', () => {
+//   // we're connected!
+//   // Once our connection opens, our callback will be called
+//   data.itemCreator(13, (err, results) => {
+//     saver(results);
+//   });
+// });
 
 module.exports.Item = Item;
 
@@ -64,3 +66,35 @@ module.exports.Item = Item;
 //   if (err) throw err
 //   console.log(result)
 // })
+
+
+// // eslint-disable-next-line func-names
+// const save = function (item) {
+//   const newItem = new Item({
+//     id: item.id,
+//     imageUrl: item.imageUrl,
+//     imageDescription: item.imageDescription,
+//     brand: item.brand,
+//     name: item.name,
+//     rating: item.rating,
+//     numberOfRatings: item.numberOfRatings,
+//     price: item.price,
+//   });
+
+//   newItem.save();
+// };
+
+// // eslint-disable-next-line no-unused-vars
+// const dataIterator = (allItems) => {
+//   allItems.forEach((item) => { save(item); });
+// };
+
+// db.once('open', () => {
+//   // we're connected!
+//   // Once our connection opens, our callback will be called
+//   data.itemCreator(13, (err, results) => {
+//     dataIterator(results);
+//   });
+// });
+
+// module.exports.Item = Item;

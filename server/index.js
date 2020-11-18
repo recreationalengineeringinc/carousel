@@ -4,20 +4,21 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
-const port = 3000;
+const port = 6000;
 
-// const seeder = require('../database/seeder.js');
-const seeder = require('./model.js');
+const model = require('./model.js');
 
 app.use(express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
 
-app.get('/items', (req, res) => {
-  seeder.dataFetcher((err, data) => {
+app.get('/product/:id', (req, res) => {
+  model.dataFetcher((err, data) => {
     if (err) {
       res.send(err);
     } else {
       // console.log('Data: ', data);
+      // res.header(‘Content-Type’, ‘application/json’);
+      // res.status(200).send(JSON.stringify(result, 0, 1));
       res.send(data);
     }
   });
