@@ -1,32 +1,39 @@
 import React from 'react';
 
 const Card = (props) => (
-  <div>
+  <div className="cards" style={{transform: `translateX(${props.x}px)`}}>
 
     <div>
       <a>
         <div>
-          <img src={props.card.imageUrl} alt={props.card.imageDescription} />
+          <img src={props.card.imageUrl} height="280px" width="170px" alt={props.card.imageDescription} />
         </div>
       </a>
     </div>
 
     <a>
       <h3>
-        <div>{props.card.brand}</div>
-        <span>{props.card.name}</span>
+        <div className="brand">{props.card.brand}</div>
+        <span className="item-name">{props.card.name}</span>
       </h3>
     </a>
 
     <div>
       <div>
-        <div>
+
+        {/* <div>
           <span>1</span>
           <span>2</span>
           <span>3</span>
           <span>4</span>
           <span>5</span>
+        </div> */}
+
+        <div className="ratings">
+          <div className="empty-stars"></div>
+          <div className="full-stars" style={{width:`${props.card.rating * 20}%`}}></div>
         </div>
+
         <span>
           <span>{`(${props.card.numberOfRatings})`}</span>
         </span>

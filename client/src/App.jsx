@@ -11,24 +11,36 @@ class App extends React.Component {
     super(props);
     this.state = {
       cardObjectsArray: dummydata[0].items,
-      cardObject: dummydata[0].items[0]
+      cardObject: dummydata[0].items[0],
+      buttonStatus: true,
+      x: 10
     };
   }
 
   nextCard () {
-    console.log('clicked Rite!');
-    // debugger;
     // go to the next card by incrementing the id property on the card
     // card ids start at 1, so index 0 in the array is id 1
     // const newIndex = this.state.cardObject.id + 1;
-    this.setState({cardObject: dummydata[0].items[this.state.cardObject.id]});
+
+    // need to get all the classname cards elements and change its translate x
+    // translateX(-990px) on the cards shows last 6 cards
+    // const allCards = document.getElementsByClassName('cards');
+    // allCards.setAttribute('transform', 'translateX(-990px)');
+    // allCards.style.transform('translateX(-990px)');
+    // debugger;
+    // for (let i = 0; i < allCards.length; i++) {
+    //   console.log('in the loop!')
+    //   allCards[i].setAttribute('transform', 'translateX(-990px)');
+    // }
+    // console.log('allCards: ', allCards);
+    this.setState({cardObject: dummydata[0].items[this.state.cardObject.id], buttonStatus: !this.state.buttonStatus, x: -990});
   }
 
   previousCard () {
-    console.log('clicked Left!');
-    // debugger;
     // const newIndex = this.state.cardObject.id - 2;
-    this.setState({cardObject: dummydata[0].items[this.state.cardObject.id - 2]});
+    // need to get all the classname cards elements and change its translate x
+    // translateX(10px) shows the first 6 cards
+    this.setState({cardObject: dummydata[0].items[this.state.cardObject.id - 2], buttonStatus: !this.state.buttonStatus, x: 10});
   }
 
   componentDidMount () {
@@ -36,37 +48,34 @@ class App extends React.Component {
   }
 
   render () {
+    const {cardObjectsArray, cardObject, buttonStatus, x} = this.state;
     return (
-      <div>
+      <div id="product-recommendations">
         <aside>
-          <div>
+          <div className="cards-slider">
 
-            <div>
+            <div className="people-also-liked">
               People Also Liked
             </div>
 
-            <div>
-              <Card card={this.state.cardObject} />
-              <button type="button" onClick={() => this.previousCard()}
-              // disabled when we're at the first card
-              disabled={this.state.cardObject.id === 1}
-              >Left
-                <svg>
-                  <path>
-                  </path>
-                </svg>
-              </button>
-              <button type="button" onClick={() => this.nextCard()}
-              // disabled when we're at the last card
-              disabled={this.state.cardObject.id === this.state.cardObjectsArray.length}
-              >Right
-                <svg>
-                  <path>
-                  </path>
-                </svg>
-              </button>
-            </div>
+            <div className="cards-slider-wrapper">
+              {cardObjectsArray.map((card, index) => <Card /*key={cardObject._id}*/ key={index} card={card} x={x}/>)}
 
+              <button type="button" className="carousel-btn carousel-btn--left" onClick={() => this.previousCard()} disabled={buttonStatus} >
+                <svg>
+                  <path d="M7.415 11l3.295-3.295a1 1 0 00-1.417-1.412l-4.98 4.98a.997.997 0 00-.025 1.429l5.005 5.005a1 1 0 101.414-1.414L7.414 13H19a1 1 0 000-2H7.415z">
+                  </path>
+                </svg>
+              </button>
+
+              <button type="button" className="carousel-btn carousel-btn--right" onClick={() => this.nextCard()} disabled={!buttonStatus} >
+                <svg>
+                  <path className="button-arrow" d="M16.585 13l-3.295 3.295a1 1 0 001.417 1.412l4.98-4.98a.997.997 0 00.025-1.429l-5.005-5.005a1 1 0 00-1.414 1.414L16.586 11H5a1 1 0 000 2h11.585z">
+                  </path>
+                </svg>
+              </button>
+
+            </div>
           </div>
         </aside>
       </div>
