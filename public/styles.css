@@ -68,6 +68,11 @@ img {
   margin-bottom: 0;
 }
 
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 h3:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -76,7 +81,7 @@ h3:hover {
 .number-of-ratings {
   letter-spacing: -.008rem;
   font-size: 1rem;
-  line-height: 1.6rem;
+  /* line-height: 1.6rem; */
   font-family: Graphik,"Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -86,8 +91,14 @@ h3:hover {
   /* display: flex;
   align-items: center;
   position: relative; */
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
 }
 
+.price-wrapper {
+  margin-top: 4px;
+}
 
 .price {
   font-family: Graphik,"Helvetica Neue", sans-serif;

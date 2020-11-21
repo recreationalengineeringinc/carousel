@@ -10,6 +10,9 @@ const model = require('./model.js');
 
 app.use(express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
+// app.use(morgan('dev'));
+// app.use('/product/:id')
+
 
 app.get('/product/:id', (req, res) => {
   model.dataFetcher((err, data) => {

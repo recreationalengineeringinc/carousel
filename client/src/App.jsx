@@ -6,7 +6,6 @@ import axios from 'axios';
 import dummydata from './dummydata.js';
 
 class App extends React.Component {
-
   constructor (props) {
     super(props);
     this.state = {
@@ -78,7 +77,6 @@ class App extends React.Component {
     // need to get all the classname cards elements and change its translate x
     // translateX(10px) shows the first 6 cards
     // this.setState({buttonStatus: !this.state.buttonStatus, x: 10});
-
   }
 
   componentDidMount () {
@@ -128,7 +126,8 @@ class App extends React.Component {
     );
   }
 }
-
+// container for each photo and specify the size for the container
+// for the photo, specify the photo size, object-fit: contain
 export default App;
 
 {/* <svg>

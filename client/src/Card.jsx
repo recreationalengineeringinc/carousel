@@ -44,7 +44,7 @@ const Card = (props) => (
     </div>
 
     <div>
-      <div>
+      <div className="price-wrapper">
         <span className="price">{`$${props.card.price}`}</span>
       </div>
     </div>
