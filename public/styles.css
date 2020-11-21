@@ -1,0 +1,244 @@
+/* #product-recommendations {
+  width: 100%;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  min-width: 0
+} */
+
+
+.cards-slider {
+  position: relative;
+}
+
+.cards-slider-wrapper {
+  display: flex;
+  position: relative;
+  width: 1575px;
+  overflow: hidden;
+  /* scroll-behavior: smooth; */
+  /* transition: all 0.5s ease; */
+  /* transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); */
+}
+
+.people-also-liked {
+  font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -.016rem;
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+.cards {
+  flex: 1;
+  min-width: 200px;
+  transition: all 0.4s ease;
+  padding: 30px;
+}
+
+.image-container {
+  height: 280px;
+  width: 170px;
+}
+
+img {
+  object-fit: contain;
+  height: 280px;
+  width: 170px;
+}
+
+.brand {
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.08px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+
+}
+
+.item-name {
+  font-family: Graphik,"Helvetica Neue",sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.number-of-ratings {
+  letter-spacing: -.008rem;
+  font-size: 1rem;
+  /* line-height: 1.6rem; */
+  font-family: Graphik,"Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(12,11,8,.75);
+  /* box-sizing: inherit; */
+  margin-left: .4rem;
+  /* display: flex;
+  align-items: center;
+  position: relative; */
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.price-wrapper {
+  margin-top: 4px;
+}
+
+.price {
+  font-family: Graphik,"Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -.08px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #292929;
+}
+
+/*
+/////////////////////////////////////////////////////////////BUTTONS
+*/
+
+.carousel-btn {
+  /* transition: all 5s ease-in; */
+  color: rgb(100, 100, 100);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  background-color: white;
+  z-index: 10;
+  height: 58px;
+  width: 58px;
+  border-radius: 50%;
+  /* border: 1px solid; */
+  /* background-color: #eed; */
+  box-shadow: 0 5px 5px  rgba(205, 243, 36, 0.6);
+  -moz-box-shadow: 0 5px 5px  rgba(23, 230, 85, 0.6);
+  -webkit-box-shadow: 0 5px 5px  rgba(10, 6, 17, 0.274);
+  -o-box-shadow: 0 5px 5px  rgba(180, 25, 25, 0.6);
+  /* text-align: center;
+  display: inline-block; */
+  cursor: pointer;
+  position: absolute;
+  top: 46%;
+  /* transform: translateY(-50%); */
+  border-width: 3px;
+  border-color: white;
+  border-style: hidden;
+  outline: none;
+}
+
+.carousel-btn--left {
+  left: 40px;
+  display: none;
+}
+
+.carousel-btn--right {
+  right: 40px;
+  display: flex;
+}
+
+.carousel-btn-click {
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgb(161, 205, 223);
+  /* transition: border-color 2s ease-out; */
+}
+
+.carousel-btn:hover {
+  transition: box-shadow .3s ease-in, color .3s ease-in;
+  color: black;
+  box-shadow: 0 8px 8px  rgba(205, 243, 36, 0.6);
+  -moz-box-shadow: 0 8px 8px  rgba(23, 230, 85, 0.6);
+  -webkit-box-shadow: 0 9px 9px  rgba(10, 6, 17, 0.164);
+  -o-box-shadow: 08px 8px  rgba(180, 25, 25, 0.6);
+}
+
+/*
+/////////////////////////////////////////////////////////////////// STARS
+*/
+
+.ratings {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: white;
+  overflow: hidden;
+}
+
+.full-stars{
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fdd54f;
+}
+
+.empty-stars:before,
+.full-stars:before {
+  content: "\2605\2605\2605\2605\2605";
+  font-size: 18pt;
+}
+
+.empty-stars:before {
+  -webkit-text-stroke: .7px #BD7B2D;
+}
+
+.full-stars:before {
+  -webkit-text-stroke: .7px #bd7e33;
+}
+/*
+/* Webkit-text-stroke is not supported on firefox or IE
+/* Firefox */
+@-moz-document url-prefix() {
+  .full-stars{
+    color: #ECBE24;
+  }
+}
+
+/* :active and :focus */
+
+  .full-stars{
+    color: #FDE112;
+  }
+
+
+@font-face {
+  font-family: Stuart;
+  font-weight: 1 999;
+  src: url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuart-VF-Web-Subset.woff2") format("woff2-variations"), url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuart-VF-Web-Subset.woff2") format("woff2"); }
+
+@font-face {
+  font-family: Stuart;
+  font-weight: 1 999;
+  font-style: italic;
+  src: url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuartWebItalics-VF-Web-Subset.woff2") format("woff2-variations"), url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuartWebItalics-VF-Web-Subset.woff2") format("woff2"); }
+
+@font-face {
+  font-family: Graphik;
+  font-weight: 1 999;
+  src: url("//www.rei.com/satchel/media/font-optimized/Graphik/Graphik-VF-Web-Subset.woff2") format("woff2-variations"), url("//www.rei.com/satchel/media/font-optimized/Graphik/Graphik-VF-Web-Subset.woff2") format("woff2"); }
+@font-face {
+  font-family: Graphik;
+  font-weight: 1 999;
+  font-style: italic;
+  src: url("//www.rei.com/satchel/media/font-optimized/Graphik/GraphikWebItalic-VF-Web-Subset.woff2") format("woff2-variations"), url("//www.rei.com/satchel/media/font-optimized/Graphik/GraphikWebItalic-VF-Web-Subset.woff2") format("woff2"); }
+
+  /* back-up font family: “Helvetica Neue”,“Helvetica”,“Arial”,sans-serif; */

@@ -4,12 +4,15 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
-const port = 6000;
+const port = 3003;
 
 const model = require('./model.js');
 
 app.use(express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
+// app.use(morgan('dev'));
+// app.use('/product/:id')
+
 
 app.get('/product/:id', (req, res) => {
   model.dataFetcher((err, data) => {
