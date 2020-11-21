@@ -14,7 +14,7 @@
 .cards-slider-wrapper {
   display: flex;
   position: relative;
-  width: 1200px;
+  width: 1575px;
   overflow: hidden;
   /* scroll-behavior: smooth; */
   /* transition: all 0.5s ease; */
@@ -34,7 +34,18 @@
   flex: 1;
   min-width: 200px;
   transition: all 0.4s ease;
-  /* padding: 60px; */
+  padding: 30px;
+}
+
+.image-container {
+  height: 280px;
+  width: 170px;
+}
+
+img {
+  object-fit: contain;
+  height: 280px;
+  width: 170px;
 }
 
 .brand {
@@ -62,7 +73,6 @@ h3:hover {
   cursor: pointer;
 }
 
-
 .number-of-ratings {
   letter-spacing: -.008rem;
   font-size: 1rem;
@@ -77,6 +87,7 @@ h3:hover {
   align-items: center;
   position: relative; */
 }
+
 
 .price {
   font-family: Graphik,"Helvetica Neue", sans-serif;
@@ -123,12 +134,12 @@ h3:hover {
 }
 
 .carousel-btn--left {
-  left: 10px;
+  left: 40px;
   display: none;
 }
 
 .carousel-btn--right {
-  right: 13px;
+  right: 40px;
   display: flex;
 }
 
@@ -166,7 +177,7 @@ h3:hover {
   top: 0;
   white-space: nowrap;
   overflow: hidden;
-  color: #fde16d;
+  color: #fdd54f;
 }
 
 .empty-stars:before,
@@ -180,7 +191,7 @@ h3:hover {
 }
 
 .full-stars:before {
-  -webkit-text-stroke: .7px #BD7B2D;
+  -webkit-text-stroke: .7px #bd7e33;
 }
 /*
 /* Webkit-text-stroke is not supported on firefox or IE

@@ -5,8 +5,8 @@ const Card = (props) => (
 
     <div>
       <a>
-        <div>
-          <img src={props.card.imageUrl} height="280px" width="170px" alt={props.card.imageDescription} />
+        <div className="image-container">
+          <img src={props.card.imageUrl} alt={props.card.imageDescription} />
         </div>
       </a>
     </div>
@@ -34,7 +34,7 @@ const Card = (props) => (
           <div className="full-stars" style={{width:`${props.card.rating * 20}%`}}></div>
         </div>
 
-        <span >
+        <span className="number-of-ratings-container">
           <span className="number-of-ratings">{`(${props.card.numberOfRatings})`}</span>
         </span>
 
