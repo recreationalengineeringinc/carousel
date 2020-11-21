@@ -7,10 +7,11 @@ const bodyParser = require('body-parser');
 const port = 3003;
 
 const model = require('./model.js');
+const morgan = require('morgan');
 
 app.use(express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 // app.use('/product/:id')
 
 

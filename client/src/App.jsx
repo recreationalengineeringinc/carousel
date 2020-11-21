@@ -82,6 +82,7 @@ class App extends React.Component {
   componentDidMount () {
     // e.preventDefault();
     // axios.get('/product/:id')
+    // // axios get request path has to change to something like this `${window.location.pathname}`
     //   .then((response) => {
     //     this.setState({cardObjectsArray: response.data[0].items})
     //   console.log('response.data: ', response.data[0].items);
