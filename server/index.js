@@ -4,7 +4,7 @@ const app = express();
 
 const bodyParser = require('body-parser');
 
-const port = 3004;
+const port = 3003;
 
 const model = require('./model.js');
 
