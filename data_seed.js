@@ -10,6 +10,8 @@ const faker = require('faker');
 // ];
 
 const photo = faker.image.nightlife();
+const brand = faker.company.bsNoun();
+// const brand = faker.company.companyName();
 const productName = faker.commerce.productName();
 const adjective = faker.commerce.productAdjective();
 const price = faker.commerce.price();
@@ -29,7 +31,7 @@ const createItem = (index) => (
     id: index,
     imageUrl: photo,
     imageDescription: adjective,
-    brand: 'REI Co-op',
+    brand: brand,
     name: productName,
     rating: randomNum(5),
     numberOfRatings: randomInt(1000),

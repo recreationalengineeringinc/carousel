@@ -18,6 +18,25 @@ class App extends React.Component {
   }
 
   nextCard () {
+    let rightButton = document.getElementsByClassName('carousel-btn--right');
+    rightButton[0].classList.add("carousel-btn-click");
+    let leftButton = document.getElementsByClassName('carousel-btn--left');
+    leftButton[0].classList.remove("carousel-btn-click");
+    // By default the right button had its display to flex
+    // By default the left button has its display to none
+    // setState for x
+    this.setState({x: -990});
+    // on setTimeout, set the right button display to none AND the left to flex
+    setTimeout(()=>{
+      let leftButton = document.getElementsByClassName('carousel-btn--left');
+      console.log(leftButton);
+      // leftButton.setAttribute('display', 'flex');
+      let rightButton = document.getElementsByClassName('carousel-btn--right');
+      // rightButton.setAttribute('display', 'none');
+      leftButton[0].style.display ='flex';
+      rightButton[0].style.display ='none';
+    }, 400);
+
     // go to the next card by incrementing the id property on the card
     // card ids start at 1, so index 0 in the array is id 1
     // const newIndex = this.state.cardObject.id + 1;
@@ -33,47 +52,72 @@ class App extends React.Component {
     //   allCards[i].setAttribute('transform', 'translateX(-990px)');
     // }
     // console.log('allCards: ', allCards);
-    this.setState({cardObject: dummydata[0].items[this.state.cardObject.id], buttonStatus: !this.state.buttonStatus, x: -990});
+    // this.setState({buttonStatus: !this.state.buttonStatus, x: -990});
   }
 
   previousCard () {
+    let rightButton = document.getElementsByClassName('carousel-btn--right');
+    rightButton[0].classList.remove("carousel-btn-click");
+    let leftButton = document.getElementsByClassName('carousel-btn--left');
+    leftButton[0].classList.add("carousel-btn-click");
+    // By default,
+    // on setState add the display attribute to button
+    this.setState({x: 10});
+    // then, on setTimeout, set the display attribute to for the left button to none
+    // and the display attribute of the right button to flex
+    setTimeout(()=>{
+      let leftButton = document.getElementsByClassName('carousel-btn--left');
+      console.log(leftButton);
+      // leftButton.setAttribute('display', 'flex');
+      let rightButton = document.getElementsByClassName('carousel-btn--right');
+      // rightButton.setAttribute('display', 'none');
+      leftButton[0].style.display ='none';
+      rightButton[0].style.display ='flex';
+    }, 400);
     // const newIndex = this.state.cardObject.id - 2;
     // need to get all the classname cards elements and change its translate x
     // translateX(10px) shows the first 6 cards
-    this.setState({cardObject: dummydata[0].items[this.state.cardObject.id - 2], buttonStatus: !this.state.buttonStatus, x: 10});
+    // this.setState({buttonStatus: !this.state.buttonStatus, x: 10});
+
   }
 
   componentDidMount () {
     // e.preventDefault();
+    // axios.get('/product/:id')
+      // .then((response) => {
+        // this.setState({cardObjectsArray = })
+      // console.log('response.data: ', response.data[0].items);
+      // })
+
   }
 
   render () {
     const {cardObjectsArray, cardObject, buttonStatus, x} = this.state;
+    console.log('this is x: ', x);
     return (
       <div id="product-recommendations">
         <aside>
           <div className="cards-slider">
 
             <div className="people-also-liked">
-              People Also Liked
+              People also liked
             </div>
 
             <div className="cards-slider-wrapper">
               {cardObjectsArray.map((card, index) => <Card /*key={cardObject._id}*/ key={index} card={card} x={x}/>)}
 
-              <button type="button" className="carousel-btn carousel-btn--left" onClick={() => this.previousCard()} disabled={buttonStatus} >
-                <svg>
-                  <path d="M7.415 11l3.295-3.295a1 1 0 00-1.417-1.412l-4.98 4.98a.997.997 0 00-.025 1.429l5.005 5.005a1 1 0 101.414-1.414L7.414 13H19a1 1 0 000-2H7.415z">
-                  </path>
-                </svg>
-              </button>
+            {/* <div className="carousel-btn carousel-btn--left" style={{display: buttonStatus ? 'none' : 'flex'}}>
+              <i className="fa fa-long-arrow-left" onClick={() => this.previousCard()}></i>
+            </div> */}
+            <button className="carousel-btn carousel-btn--left" /*style={{display: buttonStatus ? 'none' : 'flex'}}*/ onClick={() => this.previousCard()} >
+            &#129104;
 
-              <button type="button" className="carousel-btn carousel-btn--right" onClick={() => this.nextCard()} disabled={!buttonStatus} >
-                <svg>
-                  <path className="button-arrow" d="M16.585 13l-3.295 3.295a1 1 0 001.417 1.412l4.98-4.98a.997.997 0 00.025-1.429l-5.005-5.005a1 1 0 00-1.414 1.414L16.586 11H5a1 1 0 000 2h11.585z">
-                  </path>
-                </svg>
-              </button>
+            </button>
+
+            {/* <div className="carousel-btn carousel-btn--right" style={{display: buttonStatus ? 'flex' : 'none'}}> */}
+              <button className="carousel-btn carousel-btn--right" /*style={{display: buttonStatus ? 'flex' : 'none'}}*/ onClick={() => this.nextCard()} >&#129106;</button>
+            {/* </div> */}
+
 
             </div>
           </div>
@@ -84,6 +128,11 @@ class App extends React.Component {
 }
 
 export default App;
+
+{/* <svg>
+<path className="button-arrow" d="M16.585 13l-3.295 3.295a1 1 0 001.417 1.412l4.98-4.98a.997.997 0 00.025-1.429l-5.005-5.005a1 1 0 00-1.414 1.414L16.586 11H5a1 1 0 000 2h11.585z">
+</path>
+</svg> */}
 
 // disabled={this.state.firstCardObject.id === 1}
 // disabled={this.state.firstCardObject.id === this.state.cardObjectsArray.length}
@@ -108,3 +157,10 @@ export default App;
     // each object is a an item "card" contains all the ifo for a specific item
     // set a
   // }
+
+  // <svg>
+  // <path d="M7.415 11l3.295-3.295a1 1 0 00-1.417-1.412l-4.98 4.98a.997.997 0 00-.025 1.429l5.005 5.005a1 1 0 101.414-1.414L7.414 13H19a1 1 0 000-2H7.415z"></path>
+  // </svg>
+
+  // left arrow &#129104;
+  // rite arrow &#129106;

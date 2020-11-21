@@ -26,6 +26,10 @@ const itemSchema = mongoose.Schema(
   // numberOfRatings: Number,
   // price: Number,
 
+  // need a random category generator for the category below
+  const categories = ['backpacks', 'shoes', 'jackets', 'tents'];
+  const randomInt = (max) => (Math.floor(Math.random() * Math.floor(max)));
+  const category = categories[randomInt(4)];
 const Item = mongoose.model('Item', itemSchema);
 
 // eslint-disable-next-line func-names
@@ -33,7 +37,7 @@ const saver = function (itemList) {
   var id = 1;
   const newItem = new Item({
     id: id,
-    category: 'backpacks',
+    category: category,
     items: itemList
   });
 

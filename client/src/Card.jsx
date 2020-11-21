@@ -34,16 +34,18 @@ const Card = (props) => (
           <div className="full-stars" style={{width:`${props.card.rating * 20}%`}}></div>
         </div>
 
-        <span>
-          <span>{`(${props.card.numberOfRatings})`}</span>
+        <span >
+          <span className="number-of-ratings">{`(${props.card.numberOfRatings})`}</span>
         </span>
+
         <span></span>
+
       </div>
     </div>
 
     <div>
       <div>
-        <span>{`$${props.card.price}`}</span>
+        <span className="price">{`$${props.card.price}`}</span>
       </div>
     </div>
 

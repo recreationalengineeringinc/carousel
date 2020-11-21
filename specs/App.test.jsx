@@ -4,12 +4,12 @@ import App from '../client/App.jsx';
 
 it('Expect button to be disabled after click.', () => {
   const wrapper = mount(<App />);
-  const status = wrapper.find('button');
+  const button = wrapper.find('button');
   // check the status of the buttons
   // simulate a click
   // check that the values reversed
 
-  expect().toBe();
+  expect(button).toBe();
 });
 
 

@@ -9,7 +9,6 @@
 
 .cards-slider {
   position: relative;
-  /* scroll-behavior: smooth; */
 }
 
 .cards-slider-wrapper {
@@ -36,8 +35,6 @@
   min-width: 200px;
   transition: all 0.4s ease;
   /* padding: 60px; */
-  /* transition: ease-in-out; */
-  /* scroll-behavior: smooth; */
 }
 
 .brand {
@@ -60,61 +57,95 @@
   margin-bottom: 0;
 }
 
+h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 .number-of-ratings {
   letter-spacing: -.008rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.6rem;
-  font-family: Graphik,"Helvetica Neue",sans-serif;
+  font-family: Graphik,"Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: 400;
+  color: rgba(12,11,8,.75);
+  /* box-sizing: inherit; */
+  margin-left: .4rem;
+  /* display: flex;
+  align-items: center;
+  position: relative; */
 }
 
 .price {
-  font-family: Graphik,"Helvetica Neue",sans-serif;
+  font-family: Graphik,"Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: 400;
   letter-spacing: -.08px;
   font-size: 1.2rem;
   line-height: 1.6rem;
+  color: #292929;
 }
 
 /*
 /////////////////////////////////////////////////////////////BUTTONS
 */
 
-button {
-  display: block;
-  height: 30px;
-  width: 30px;
+.carousel-btn {
+  /* transition: all 5s ease-in; */
+  color: rgb(100, 100, 100);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  background-color: white;
+  z-index: 10;
+  height: 58px;
+  width: 58px;
   border-radius: 50%;
-  border: 1px solid;
+  /* border: 1px solid; */
   /* background-color: #eed; */
-  box-shadow: 10px -10px  rgba(205, 243, 36, 0.6);
-  -moz-box-shadow: 10px -10px  rgba(23, 230, 85, 0.6);
-  -webkit-box-shadow: 0px 3px  rgba(10, 6, 17, 0.459);
-  -o-box-shadow: 10px -10px  rgba(180, 25, 25, 0.6);
+  box-shadow: 0 5px 5px  rgba(205, 243, 36, 0.6);
+  -moz-box-shadow: 0 5px 5px  rgba(23, 230, 85, 0.6);
+  -webkit-box-shadow: 0 5px 5px  rgba(10, 6, 17, 0.274);
+  -o-box-shadow: 0 5px 5px  rgba(180, 25, 25, 0.6);
   /* text-align: center;
   display: inline-block; */
   cursor: pointer;
-}
-
-.carousel-btn {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 40px;
-  width: 40px;
+  top: 46%;
+  /* transform: translateY(-50%); */
+  border-width: 3px;
+  border-color: white;
+  border-style: hidden;
+  outline: none;
 }
 
 .carousel-btn--left {
-  left: 8px;
-}
-.carousel-btn--right {
-  right: 13px;
+  left: 10px;
+  display: none;
 }
 
-button:hover {
-  transform: scale(1);
+.carousel-btn--right {
+  right: 13px;
+  display: flex;
+}
+
+.carousel-btn-click {
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgb(161, 205, 223);
+  /* transition: border-color 2s ease-out; */
+}
+
+.carousel-btn:hover {
+  transition: box-shadow .3s ease-in, color .3s ease-in;
+  color: black;
+  box-shadow: 0 8px 8px  rgba(205, 243, 36, 0.6);
+  -moz-box-shadow: 0 8px 8px  rgba(23, 230, 85, 0.6);
+  -webkit-box-shadow: 0 9px 9px  rgba(10, 6, 17, 0.164);
+  -o-box-shadow: 08px 8px  rgba(180, 25, 25, 0.6);
 }
 
 /*
@@ -125,7 +156,7 @@ button:hover {
   position: relative;
   vertical-align: middle;
   display: inline-block;
-  color: #b1b1b1;
+  color: white;
   overflow: hidden;
 }
 
@@ -141,15 +172,15 @@ button:hover {
 .empty-stars:before,
 .full-stars:before {
   content: "\2605\2605\2605\2605\2605";
-  font-size: 14pt;
+  font-size: 18pt;
 }
 
 .empty-stars:before {
-  -webkit-text-stroke: 1px #848484;
+  -webkit-text-stroke: .7px #BD7B2D;
 }
 
 .full-stars:before {
-  -webkit-text-stroke: 1px #BD7B2D;
+  -webkit-text-stroke: .7px #BD7B2D;
 }
 /*
 /* Webkit-text-stroke is not supported on firefox or IE
@@ -159,24 +190,25 @@ button:hover {
     color: #ECBE24;
   }
 }
-/* IE */
-<!--[if IE]>
+
+/* :active and :focus */
+
   .full-stars{
-    color: #ECBE24;
+    color: #FDE112;
   }
-<![endif]--> */
- */
 
 
 @font-face {
   font-family: Stuart;
   font-weight: 1 999;
   src: url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuart-VF-Web-Subset.woff2") format("woff2-variations"), url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuart-VF-Web-Subset.woff2") format("woff2"); }
+
 @font-face {
   font-family: Stuart;
   font-weight: 1 999;
   font-style: italic;
   src: url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuartWebItalics-VF-Web-Subset.woff2") format("woff2-variations"), url("//www.rei.com/satchel/media/font-optimized/Stuart/REIStuartWebItalics-VF-Web-Subset.woff2") format("woff2"); }
+
 @font-face {
   font-family: Graphik;
   font-weight: 1 999;
