@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import Card from './Card.jsx';
 import axios from 'axios';
 // import dummy data
-import dummydata from './dummydata.js';
+// import dummydata from './dummydata.js';
 
 class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      cardObjectsArray: dummydata[0].items,
-      cardObject: dummydata[0].items[0],
+      cardObjectsArray: [],
+      cardObject: {},
       buttonStatus: true,
       x: 10
     };
@@ -80,16 +80,15 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    // e.preventDefault();
-    // axios.get('/product/:id')
-    // // axios get request path has to change to something like this `${window.location.pathname}`
-    //   .then((response) => {
-    //     this.setState({cardObjectsArray: response.data[0].items})
-    //   console.log('response.data: ', response.data[0].items);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   })
+    axios.get('/product/:id')
+    // axios get request path has to change to something like this `${window.location.pathname}`
+      .then((response) => {
+        this.setState({cardObjectsArray: response.data[0].items})
+      console.log('response.data: ', response.data[0].items);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   }
 
   render () {
