@@ -1,15 +1,15 @@
 const faker = require('faker');
 
 // array of photo links
-// const photoUrls = [
-//   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/bivy-sack.jpg',
-//   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg',
-//   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
-//   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg',
-//   'https://reiphotos.s3-us-west-2.amazonaws.com/womens-jacket.jpg',
-// ];
-
-const photo = faker.image.nightlife();
+const photoUrls = [
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/bivy-sack.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/womens-jacket.jpg',
+];
+let index = Math.floor(Math.random()*photoUrls.length);
+const photo = photoUrls[index];
 const brand = faker.company.bsNoun();
 // const brand = faker.company.companyName();
 const productName = faker.commerce.productName();

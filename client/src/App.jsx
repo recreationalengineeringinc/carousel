@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Card from './Card.jsx';
 import axios from 'axios';
-// import dummy data
-// import dummydata from './dummydata.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import data from './dummydata.js'
+
 
 class App extends React.Component {
   constructor (props) {
@@ -12,7 +14,7 @@ class App extends React.Component {
       cardObjectsArray: [],
       cardObject: {},
       buttonStatus: true,
-      x: 10
+      x: 0
     };
   }
 
@@ -24,7 +26,7 @@ class App extends React.Component {
     // By default the right button had its display to flex
     // By default the left button has its display to none
     // setState for x
-    this.setState({x: -1285});
+    this.setState({x: -1212});
     // on setTimeout, set the right button display to none AND the left to flex
     setTimeout(()=>{
       let leftButton = document.getElementsByClassName('carousel-btn--left');
@@ -61,7 +63,7 @@ class App extends React.Component {
     leftButton[0].classList.add("carousel-btn-click");
     // By default,
     // on setState add the display attribute to button
-    this.setState({x: 10});
+    this.setState({x: 0});
     // then, on setTimeout, set the display attribute to for the left button to none
     // and the display attribute of the right button to flex
     setTimeout(()=>{
@@ -80,16 +82,20 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    axios.get('/product/:id')
-    // axios get request path has to change to something like this `${window.location.pathname}`
-      .then((response) => {
-        this.setState({cardObjectsArray: response.data[0].items})
-      console.log('response.data: ', response.data[0].items);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
+    // axios.get('/product/:id')
+    // // axios get request path has to change to something like this `${window.location.pathname}`
+    //   .then((response) => {
+    //     this.setState({cardObjectsArray: response.data[0].items})
+    //   console.log('response.data: ', response.data[0].items);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   })
+    this.setState({
+      cardObjectsArray: data[0].items
+    })
   }
+
 
   render () {
     const {cardObjectsArray, cardObject, buttonStatus, x} = this.state;
@@ -110,12 +116,17 @@ class App extends React.Component {
               <i className="fa fa-long-arrow-left" onClick={() => this.previousCard()}></i>
             </div> */}
             <button className="carousel-btn carousel-btn--left" /*style={{display: buttonStatus ? 'none' : 'flex'}}*/ onClick={() => this.previousCard()} >
-            &#129104;
+            {/* &#129104; */}
+            <FontAwesomeIcon icon={faArrowLeft} size='xs' />
 
             </button>
 
             {/* <div className="carousel-btn carousel-btn--right" style={{display: buttonStatus ? 'flex' : 'none'}}> */}
-              <button className="carousel-btn carousel-btn--right" /*style={{display: buttonStatus ? 'flex' : 'none'}}*/ onClick={() => this.nextCard()} >&#129106;</button>
+              <button className="carousel-btn carousel-btn--right" /*style={{display: buttonStatus ? 'flex' : 'none'}}*/ onClick={() => this.nextCard()} >
+                {/* &#129106; */}
+                <FontAwesomeIcon icon={faArrowRight} size='xs' />
+
+                </button>
             {/* </div> */}
 
 

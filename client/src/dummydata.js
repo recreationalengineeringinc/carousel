@@ -12,7 +12,7 @@ module.exports = [
                 "name" : "Handmade Fresh - Men's",
                 "brand" : "REI Co-op",
                 "imageDescription" : "Sleek",
-                "imageUrl" : "http://placeimg.com/170/280/nightlife",
+                "imageUrl" : "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/bivy-sack.jpg",
                 "id" : 1
         },
         {
@@ -22,7 +22,7 @@ module.exports = [
                 "name" : "Fresh Shoes - Women's",
                 "brand" : "REI Co-op",
                 "imageDescription" : "Sleek",
-                "imageUrl" : "http://placeimg.com/170/280/abstract",
+                "imageUrl" : "https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg",
                 "id" : 2
         },
         {
@@ -32,7 +32,7 @@ module.exports = [
                 "name" : "Handmade Fresh - Women's",
                 "brand" : "REI Co-op",
                 "imageDescription" : "Intelligent",
-                "imageUrl" : "http://placeimg.com/170/280/animals",
+                "imageUrl" : "https://www.rei.com/media/product/895896?size=280",
                 "id" : 3
         },
         {
@@ -42,7 +42,7 @@ module.exports = [
                 "name" : "Handmade Shoes - Men's",
                 "brand" : "REI Co-op",
                 "imageDescription" : "Sleek",
-                "imageUrl" : "http://placeimg.com/170/280/fashion",
+                "imageUrl" : "https://www.rei.com/media/product/166924?size=280",
                 "id" : 4
         },
         {
@@ -52,7 +52,7 @@ module.exports = [
                 "name" : "Handmade Fresh - Men's",
                 "brand" : "REI Co-op",
                 "imageDescription" : "Sleek",
-                "imageUrl" : "http://placeimg.com/170/280/technics",
+                "imageUrl" : "https://www.rei.com/media/product/895032?size=280",
                 "id" : 5
         },
         {
@@ -62,7 +62,7 @@ module.exports = [
                 "name" : "Fresh Shoes - Men's",
                 "brand" : "REI Co-op",
                 "imageDescription" : "Intelligent",
-                "imageUrl" : "http://placeimg.com/170/280/nature",
+                "imageUrl" : "https://www.rei.com/media/product/163977?size=280",
                 "id" : 6
         },
         {
@@ -72,7 +72,7 @@ module.exports = [
                 "name" : "Handmade Fresh - Women's",
                 "brand" : "REI Co-op",
                 "imageDescription" : "Sleek",
-                "imageUrl" : "http://placeimg.com/170/280/sports",
+                "imageUrl" : "https://www.rei.com/media/product/862910?size=280",
                 "id" : 7
         },
         {

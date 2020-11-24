@@ -11,43 +11,45 @@ const Card = (props) => (
       </a>
     </div>
 
-    <a>
-      <h3>
-        <div className="brand">{props.card.brand}</div>
-        <span className="item-name">{props.card.name}</span>
-      </h3>
-    </a>
+      <div id='info'>
+        <a>
+          <h3>
+            <div className="brand">{props.card.brand}</div>
+            <span className="item-name">{props.card.name}</span>
+          </h3>
+        </a>
 
-    <div>
-      <div>
+        <div>
+          <div>
 
-        {/* <div>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-        </div> */}
+            {/* <div>
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+            </div> */}
 
-        <div className="ratings">
-          <div className="empty-stars"></div>
-          <div className="full-stars" style={{width:`${props.card.rating * 20}%`}}></div>
+            <div className="ratings">
+              <div className="empty-stars"></div>
+              <div className="full-stars" style={{width:`${props.card.rating * 20}%`}}></div>
+            </div>
+
+            <span className="number-of-ratings-container">
+              <span className="number-of-ratings">{`(${props.card.numberOfRatings})`}</span>
+            </span>
+
+            <span></span>
+
+          </div>
         </div>
 
-        <span className="number-of-ratings-container">
-          <span className="number-of-ratings">{`(${props.card.numberOfRatings})`}</span>
-        </span>
-
-        <span></span>
-
-      </div>
-    </div>
-
-    <div>
-      <div className="price-wrapper">
-        <span className="price">{`$${props.card.price}`}</span>
-      </div>
-    </div>
+        <div>
+          <div className="price-wrapper">
+            <span className="price">{`$${props.card.price}`}</span>
+          </div>
+        </div>
+          </div>
 
   </div>
 );

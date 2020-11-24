@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const data = require('../data_seed.js');
 
-mongoose.connect('mongodb://localhost/rei');
+mongoose.connect('mongodb://127.0.0.1/rei');
 const db = mongoose.connection;
 
 // eslint-disable-next-line no-console

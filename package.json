@@ -34,13 +34,18 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
     "axios": "^0.19.2",
     "body-parser": "^1.17.0",
+    "css-loader": "^5.0.1",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "mongoose": "^4.9.6",
     "morgan": "^1.10.0",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "style-loader": "^2.0.0"
   }
 }
