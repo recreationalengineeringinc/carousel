@@ -19,11 +19,11 @@ const photoUrls = [
 
 var indexGenerator = (photoUrls) => (Math.floor(Math.random()*photoUrls.length));
 var photo = (photoUrls) => (photoUrls[indexGenerator(photoUrls)]);
-var brand = faker.company.bsNoun();
+// var brand = faker.company.bsNoun();
 // var brand = faker.company.companyName();
-var productName = faker.commerce.productName();
-var adjective = faker.commerce.productAdjective();
-var price = faker.commerce.price();
+// var productName = faker.commerce.productName();
+// var adjective = faker.commerce.productAdjective();
+// var price = faker.commerce.price();
 
 // random price generator
 // eslint-disable-next-line max-len
@@ -39,12 +39,12 @@ var createItem = (index) => (
   {
     id: index,
     imageUrl: photo(photoUrls),
-    imageDescription: adjective,
-    brand: brand,
-    name: productName,
+    imageDescription: faker.commerce.productAdjective(),
+    brand: faker.company.bsNoun(),
+    name: faker.commerce.productName(),
     rating: randomNum(5),
     numberOfRatings: randomInt(1000),
-    price: price,
+    price: faker.commerce.price(),
   }
 );
 
