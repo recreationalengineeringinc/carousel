@@ -6,11 +6,13 @@
   min-width: 0
 } */
 
-#product-recommendations {
+/*
+#product-recommendatino {
   margin-left: auto;
   margin-right: auto;
 
-}
+} */
+
 .cards-slider {
   position: relative;
 }
