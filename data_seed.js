@@ -4,9 +4,17 @@ const faker = require('faker');
 const photoUrls = [
   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/bivy-sack.jpg',
   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg',
-  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/womens-jacket.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-mens-jacket.jpg',
   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg',
-  'https://reiphotos.s3-us-west-2.amazonaws.com/womens-jacket.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack-2.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/paddle-boards.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/nemo-sleeping-bag.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/nalgene-bottle.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/mens-sleeping-bag.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/mens-jacket.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg'
 ];
 let index = Math.floor(Math.random()*photoUrls.length);
 const photo = photoUrls[index];

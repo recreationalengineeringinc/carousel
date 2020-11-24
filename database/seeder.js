@@ -49,14 +49,14 @@ const saver = function (itemList) {
 //   allItems.forEach((item) => { save(item); });
 // };
 
-// // UNCOMMENT TO RUN seeder.js
-// db.once('open', () => {
-//   // we're connected!
-//   // Once our connection opens, our callback will be called
-//   data.itemCreator(13, (err, results) => {
-//     saver(results);
-//   });
-// });
+// UNCOMMENT TO RUN seeder.js
+db.once('open', () => {
+  // we're connected!
+  // Once our connection opens, our callback will be called
+  data.itemCreator(13, (err, results) => {
+    saver(results);
+  });
+});
 
 module.exports.Item = Item;
 
