@@ -4,45 +4,54 @@ const faker = require('faker');
 const photoUrls = [
   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/bivy-sack.jpg',
   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/camping-tent.jpg',
-  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/womens-jacket.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/vegan-climbing-shoes.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-mens-jacket.jpg',
   'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack.jpg',
-  'https://reiphotos.s3-us-west-2.amazonaws.com/womens-jacket.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/pav-backpack-2.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/paddle-boards.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/nemo-sleeping-bag.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/nalgene-bottle.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/mens-sleeping-bag.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/mens-jacket.jpg',
+  'https://reiphotos.s3-us-west-2.amazonaws.com/FEC+Photos/climbing-shoes.jpg'
 ];
-let index = Math.floor(Math.random()*photoUrls.length);
-const photo = photoUrls[index];
-const brand = faker.company.bsNoun();
-// const brand = faker.company.companyName();
-const productName = faker.commerce.productName();
-const adjective = faker.commerce.productAdjective();
-const price = faker.commerce.price();
+
+var indexGenerator = (photoUrls) => (Math.floor(Math.random()*photoUrls.length));
+var photo = (photoUrls) => (photoUrls[indexGenerator(photoUrls)]);
+// var brand = faker.company.bsNoun();
+// var brand = faker.company.companyName();
+// var productName = faker.commerce.productName();
+// var adjective = faker.commerce.productAdjective();
+// var price = faker.commerce.price();
 
 // random price generator
 // eslint-disable-next-line max-len
-const randomNum = (max) => (Number((Math.floor(Math.random() * Math.floor(max)).toString())) + Number((Math.random().toString().slice(0, 4))));
+var randomNum = (max) => (Number((Math.floor(Math.random() * Math.floor(max)).toString())) + Number((Math.random().toString().slice(0, 4))));
 // console.log(randomPrice(100));
 
-// random amount of ratings generator
-const randomInt = (max) => (Math.floor(Math.random() * Math.floor(max)));
+// random number of ratings generator
+var randomInt = (max) => (Math.floor(Math.random() * Math.floor(max)));
 
 // item object generator
 
-const createItem = (index) => (
+var createItem = (index) => (
   {
     id: index,
-    imageUrl: photo,
-    imageDescription: adjective,
-    brand: brand,
-    name: productName,
+    imageUrl: photo(photoUrls),
+    imageDescription: faker.commerce.productAdjective(),
+    brand: faker.company.bsNoun(),
+    name: faker.commerce.productName(),
     rating: randomNum(5),
     numberOfRatings: randomInt(1000),
-    price: price,
+    price: faker.commerce.price(),
   }
 );
 
-const itemCreator = (numberOfItems, callback) => {
-  const allItems = [];
+var itemCreator = (numberOfItems, callback) => {
+  var allItems = [];
   for (let i = 1; i < numberOfItems; i += 1) {
-    const item = createItem(i);
+    var item = createItem(i);
     allItems.push(item);
   }
   callback(null, allItems);

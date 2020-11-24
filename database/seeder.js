@@ -28,12 +28,12 @@ const itemSchema = mongoose.Schema(
 
   // need a random category generator for the category below
   const categories = ['backpacks', 'shoes', 'jackets', 'tents'];
-  const randomInt = (max) => (Math.floor(Math.random() * Math.floor(max)));
-  const category = categories[randomInt(4)];
+  var randomInt = (max) => (Math.floor(Math.random() * Math.floor(max)));
+  var category = categories[randomInt(4)];
 const Item = mongoose.model('Item', itemSchema);
 
 // eslint-disable-next-line func-names
-const saver = function (itemList) {
+var saver = function (itemList) {
   var id = 1;
   const newItem = new Item({
     id: id,
@@ -49,14 +49,14 @@ const saver = function (itemList) {
 //   allItems.forEach((item) => { save(item); });
 // };
 
-// // UNCOMMENT TO RUN seeder.js
-// db.once('open', () => {
-//   // we're connected!
-//   // Once our connection opens, our callback will be called
-//   data.itemCreator(13, (err, results) => {
-//     saver(results);
-//   });
-// });
+// UNCOMMENT TO RUN seeder.js
+db.once('open', () => {
+  // we're connected!
+  // Once our connection opens, our callback will be called
+  data.itemCreator(12, (err, results) => {
+    saver(results);
+  });
+});
 
 module.exports.Item = Item;
 

@@ -26,7 +26,7 @@ class App extends React.Component {
     // By default the right button had its display to flex
     // By default the left button has its display to none
     // setState for x
-    this.setState({x: -1212});
+    this.setState({x: -1012});
     // on setTimeout, set the right button display to none AND the left to flex
     setTimeout(()=>{
       let leftButton = document.getElementsByClassName('carousel-btn--left');
@@ -82,18 +82,18 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    // axios.get('/product/:id')
-    // // axios get request path has to change to something like this `${window.location.pathname}`
-    //   .then((response) => {
-    //     this.setState({cardObjectsArray: response.data[0].items})
-    //   console.log('response.data: ', response.data[0].items);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   })
-    this.setState({
-      cardObjectsArray: data[0].items
-    })
+    axios.get('/product/:id')
+    // axios get request path has to change to something like this `${window.location.pathname}`
+      .then((response) => {
+        this.setState({cardObjectsArray: response.data[0].items})
+      console.log('response.data: ', response.data[0].items);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+    // this.setState({
+    //   cardObjectsArray: data[0].items
+    // })
   }
 
 
