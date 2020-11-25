@@ -9,13 +9,13 @@ const port = 3003;
 const model = require('./model.js');
 const morgan = require('morgan');
 
-app.use(express.static(`${__dirname}/../public`));
-app.use(bodyParser.json());
 app.use(morgan('dev'));
+app.use('*/carousel', express.static(`${__dirname}/../public`));
+app.use(bodyParser.json());
 // app.use('/product/:id')
 
 
-app.get('/product/:id', (req, res) => {
+app.get('/related-items', (req, res) => {
   model.dataFetcher((err, data) => {
     if (err) {
       res.send(err);
@@ -30,5 +30,5 @@ app.get('/product/:id', (req, res) => {
 
 app.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log(`listening on port http://localhost:${port}`);
+  console.log(`listening on port http://localhost:${port}/carousel`);
 });

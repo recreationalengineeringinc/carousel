@@ -200,7 +200,7 @@ h3:hover {
 /////////////////////////////////////////////////////////////////// STARS
 */
 
-.ratings {
+.carousel-ratings {
   position: relative;
   vertical-align: middle;
   display: inline-block;
@@ -208,7 +208,7 @@ h3:hover {
   overflow: hidden;
 }
 
-.full-stars{
+.carousel-full-stars{
   position: absolute;
   left: 0;
   top: 0;
@@ -217,31 +217,31 @@ h3:hover {
   color: #fdd54f;
 }
 
-.empty-stars:before,
-.full-stars:before {
+.carousel-empty-stars:before,
+.carousel-full-stars:before {
   content: "\2605\2605\2605\2605\2605";
   font-size: 13pt;
 }
 
-.empty-stars:before {
+.carousel-empty-stars:before {
   -webkit-text-stroke: .7px #BD7B2D;
 }
 
-.full-stars:before {
+.carousel-full-stars:before {
   -webkit-text-stroke: .7px #bd7e33;
 }
 /*
 /* Webkit-text-stroke is not supported on firefox or IE
 /* Firefox */
 @-moz-document url-prefix() {
-  .full-stars{
+  .carousel-full-stars{
     color: #ECBE24;
   }
 }
 
 /* :active and :focus */
 
-  .full-stars{
+  .carousel-full-stars{
     color: #FDE112;
   }
 

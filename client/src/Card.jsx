@@ -30,9 +30,9 @@ const Card = (props) => (
               <span>5</span>
             </div> */}
 
-            <div className="ratings">
-              <div className="empty-stars"></div>
-              <div className="full-stars" style={{width:`${props.card.rating * 20}%`}}></div>
+            <div className="carousel-ratings">
+              <div className="carousel-empty-stars"></div>
+              <div className="carousel-full-stars" style={{width:`${props.card.rating * 20}%`}}></div>
             </div>
 
             <span className="number-of-ratings-container">

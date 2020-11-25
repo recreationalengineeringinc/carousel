@@ -82,11 +82,12 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    axios.get('/product/:id')
+    // console.log('current location:', window.location.pathname);
+    axios.get('/related-items')
     // axios get request path has to change to something like this `${window.location.pathname}`
       .then((response) => {
         this.setState({cardObjectsArray: response.data[0].items})
-      console.log('response.data: ', response.data[0].items);
+      // console.log('response.data: ', response.data[0].items);
       })
       .catch((err) => {
         console.log(err);
@@ -99,7 +100,7 @@ class App extends React.Component {
 
   render () {
     const {cardObjectsArray, cardObject, buttonStatus, x} = this.state;
-    console.log('this is x: ', x);
+    // console.log('this is x: ', x);
     return (
       <div id="product-recommendations">
         <aside>
