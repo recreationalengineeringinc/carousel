@@ -59,7 +59,7 @@
 
 }
 
-img {
+.image {
   object-fit: contain;
   height: auto;
   width: auto;
