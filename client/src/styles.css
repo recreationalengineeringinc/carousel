@@ -1,10 +1,11 @@
-/* #product-recommendations {
-  width: 100%;
+#product-recommendations {
+  /* width: 100%;
   -webkit-flex: 0 1 auto;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
-  min-width: 0
-} */
+  min-width: 0 */
+  margin-bottom: 70px;
+}
 
 /*
 #product-recommendatino {
@@ -14,6 +15,9 @@
 } */
 
 .cards-slider {
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 }
 
@@ -32,9 +36,9 @@
 .people-also-liked {
   font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 450;
   letter-spacing: -.016rem;
-  font-size: 2rem;
+  font-size: 1.3rem;
   line-height: 2.6rem;
 }
 
@@ -81,9 +85,9 @@
 .item-name {
   font-family: Graphik,"Helvetica Neue",sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 440;
   letter-spacing: 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   /* line-height: 2rem; */
   margin-bottom: 0;
 }
@@ -107,7 +111,7 @@ h3:hover {
   font-weight: 400;
   color: rgba(12,11,8,.75);
   /* box-sizing: inherit; */
-  margin-left: .4rem;
+  margin-left: .2rem;
   /* display: flex;
   align-items: center;
   position: relative; */
@@ -125,7 +129,7 @@ h3:hover {
   font-style: normal;
   font-weight: 400;
   letter-spacing: -.08px;
-  font-size: 1rem;
+  font-size: .9rem;
   line-height: 1.6rem;
   color: #292929;
 }
@@ -162,7 +166,7 @@ h3:hover {
   display: inline-block; */
   cursor: pointer;
   position: absolute;
-  top: 42%;
+  top: 52%;
   /* transform: translateY(-50%); */
   border-width: 3px;
   border-color: white;
@@ -171,12 +175,12 @@ h3:hover {
 }
 
 .carousel-btn--left {
-  left: 40px;
+  left: -5px;
   display: none;
 }
 
 .carousel-btn--right {
-  right: 50px;
+  right: -50px;
   display: flex;
 }
 
