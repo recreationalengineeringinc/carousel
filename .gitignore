@@ -27,3 +27,6 @@ dist/
 # Pem key
 *.pem
 
+#login
+*.sh
+
