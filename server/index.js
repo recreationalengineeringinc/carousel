@@ -7,11 +7,11 @@ const port = 3003;
 
 const model = require('./model.js');
 const morgan = require('morgan');
-app.use(shrinkRay());
 app.use(morgan('dev'));
 app.use('*/carousel', express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
 // app.use('/product/:id')
+app.use(shrinkRay());
 
 
 app.get('/related-items', (req, res) => {

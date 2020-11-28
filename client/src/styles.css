@@ -36,7 +36,7 @@
 .people-also-liked {
   font-family: Graphik,Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
   font-style: normal;
-  font-weight: 450;
+  font-weight: 500;
   letter-spacing: -.016rem;
   font-size: 1.3rem;
   line-height: 2.6rem;
@@ -75,7 +75,7 @@
 .brand {
   font-family: Graphik,"Helvetica Neue",sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 450;
   letter-spacing: -.08px;
   font-size: .8rem;
   line-height: 1.6rem;
@@ -85,7 +85,7 @@
 .item-name {
   font-family: Graphik,"Helvetica Neue",sans-serif;
   font-style: normal;
-  font-weight: 440;
+  font-weight: 500;
   letter-spacing: 0;
   font-size: 1rem;
   /* line-height: 2rem; */
@@ -127,7 +127,7 @@ h3:hover {
 .price {
   font-family: Graphik,"Helvetica Neue", sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 450;
   letter-spacing: -.08px;
   font-size: .9rem;
   line-height: 1.6rem;
