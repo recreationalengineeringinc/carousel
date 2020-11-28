@@ -168,14 +168,14 @@ h3:hover {
   position: absolute;
   top: 52%;
   /* transform: translateY(-50%); */
-  border-width: 3px;
+  border-width: 2px;
   border-color: white;
   border-style: hidden;
   outline: none;
 }
 
 .carousel-btn--left {
-  left: -5px;
+  left: 0px;
   display: none;
 }
 
@@ -212,7 +212,7 @@ h3:hover {
   overflow: hidden;
 }
 
-.carousel-full-stars{
+.carousel-full-stars {
   position: absolute;
   left: 0;
   top: 0;
