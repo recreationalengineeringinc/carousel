@@ -1,14 +1,13 @@
 const express = require('express');
-
 const app = express();
-
 const bodyParser = require('body-parser');
+const shrinkRay = require('shrink-ray-current');
 
 const port = 3003;
 
 const model = require('./model.js');
 const morgan = require('morgan');
-
+app.use(shrinkRay());
 app.use(morgan('dev'));
 app.use('*/carousel', express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
