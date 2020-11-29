@@ -10,7 +10,6 @@ module.exports = {
     path: DIST_DIR,
   },
   module: {
-    mode: 'development',
     rules: [
       {
         test: /\.jsx?$/,
@@ -25,6 +24,15 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'images/[hash]-[name].[ext]',
+          },
+        },
       },
     ]
   },
