@@ -1,5 +1,5 @@
 // const shrinkRay = require('shrink-ray-current');
-const compression = require('compression');
+// const compression = require('compression');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -8,7 +8,7 @@ const port = 3003;
 
 const model = require('./model.js');
 const morgan = require('morgan');
-app.use(compression());
+// app.use(compression());
 app.use(morgan('dev'));
 app.use('*/carousel', express.static(`${__dirname}/../public`));
 app.use(bodyParser.json());
